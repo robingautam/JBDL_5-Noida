@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- bean definitions here -->
+
+    <util:list list-class="java.util.ArrayList" id="list">
+        <value>23</value>
+        <value>45</value>
+        <value>56</value>
+    </util:list>
+
+    <bean class="org.example.model.Student" name="st st2 st3" id="stu" parent="parent" scope="prototype" autowire="byName">
+        <property name="id" value="1" />
+        <property name="name" value="Robin" />
+        <property name="email" value="robin@gmail.com" />
+       <!-- <property name="list" >
+            <list>
+                <value>23</value>
+                <value>45</value>
+                <value>56</value>
+            </list>
+        </property>-->
+        <property name="list" ref="list" />
+        <property name="subjects">
+            <set>
+                <value>Hindi</value>
+                <value>English</value>
+                <value>English</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="Hindi" value="56" />
+            </map>
+        </property>
+      <!--  <property name="address">
+            <ref bean="address" />
+        </property>-->
+    </bean>
+
+
+    <bean class="org.example.model.Address" name="address3">
+        <property name="street1" value="M.V" />
+        <property name="street2" value="delhi" />
+        <property name="pincode" value="110091" />
+    </bean>
+
+    <bean class="org.example.model.Parent" name="parent">
+        <property name="commonField" value="some common data" />
+    </bean>
+
+
+</beans>

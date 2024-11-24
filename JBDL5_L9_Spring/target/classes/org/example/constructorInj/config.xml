@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+   <!-- Constructor Injection   -->
+
+    <bean class="org.example.constructorInj.Employee" name="employee">
+        <constructor-arg value="1" />
+        <constructor-arg value="Robin" />
+        <constructor-arg value="robin@gmail.com" />
+    </bean>
+
+    <bean class="org.example.constructorInj.Math" name="math">
+        <constructor-arg value="2" type="int" />
+        <constructor-arg value="4" type="int" />
+    </bean>
+
+</beans>
