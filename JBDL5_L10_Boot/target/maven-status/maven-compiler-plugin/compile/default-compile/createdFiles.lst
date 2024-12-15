@@ -1,0 +1,7 @@
+org\gfg\JBDL5_L10_Boot\Jbdl5L10BootApplication.class
+org\gfg\JBDL5_L10_Boot\profile\ProductionDatabase.class
+org\gfg\controller\StudentController.class
+org\gfg\JBDL5_L10_Boot\profile\DevelopmentDatabase.class
+org\gfg\model\Student.class
+org\gfg\JBDL5_L10_Boot\profile\DBConnect.class
+org\gfg\service\StudentService.class
