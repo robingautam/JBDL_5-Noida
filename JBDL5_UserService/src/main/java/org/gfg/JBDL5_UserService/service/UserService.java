@@ -1,5 +1,6 @@
 package org.gfg.JBDL5_UserService.service;
 
+import org.gfg.JBDL5_UserService.feign.FeignClient;
 import org.gfg.JBDL5_UserService.model.Order;
 import org.gfg.JBDL5_UserService.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class UserService {
 
     @Autowired
     RestTemplate restTemplate;
+
+    @Autowired
+    FeignClient feignClient;
 
     static List<User> userList;
 
@@ -39,8 +43,8 @@ public class UserService {
             }
         }
 
-       List<Order> orderList = restTemplate.getForObject("http://localhost:8081/order-service/get/orders/"+id, List.class);
-
+//       List<Order> orderList = restTemplate.getForObject("http://ORDER-SERVICE/order-service/get/orders/"+id, List.class);
+        List<Order> orderList = feignClient.getOrderList(Integer.toString(id));
         if (userData==null){
             return null;
         }

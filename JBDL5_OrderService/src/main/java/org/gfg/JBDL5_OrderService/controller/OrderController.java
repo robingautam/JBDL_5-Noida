@@ -20,6 +20,7 @@ public class OrderController {
 
     @GetMapping("/get/orders/{userId}")
     public List<Order> getOrderList(@PathVariable("userId") String userId){
+        System.out.println("Getting request for order");
         return orderService.getOrderByUserId(Integer.parseInt(userId));
 
     }
